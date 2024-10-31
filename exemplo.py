@@ -18,5 +18,5 @@ st.pyplot(scatter_plot.figure)
 
 st.subheader('distribuição de comprimento das pétalas')
 st.write('distribuição do comprimento das pétalas para as tres especies')
-hist_plot = sns.scatterplot(data=df,x='petal_lenght',hue='species',multiple='stack')
+hist_plot = sns.histplot(data=df,x='petal_lenght',hue='species',multiple='stack')
 st.pyplot(hist_plot.figure)
