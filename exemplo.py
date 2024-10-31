@@ -1,7 +1,7 @@
 import pandas as pd
 import seaborn as sns
-from sklearn import datasets
 import streamlit as st
+import matplotlib.pyplot as plt
 
 df = sns.load_dataset('iris')
 
