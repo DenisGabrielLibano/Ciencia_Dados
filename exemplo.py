@@ -3,20 +3,25 @@ import seaborn as sns
 import streamlit as st
 import matplotlib.pyplot as plt
 
+# carregar o dataset Iris
 df = sns.load_dataset('iris')
 
-st.title('analise de dados iris')
+# exibir informações iniciais do Streamlit
+st.title("Análise do Conjunto de Dados Iris")
 st.write(df.head())
 
-st.subheader('estatisticas descritivas')
+# Estatísticas descritivas
+st.subheader("Estatísticas Descritivas")
 st.write(df.describe())
 
-st.subheader('gráfico de dispersão')
-st.write('vizualizações das caracteristicas de especie do iris')
-scatter_plot =sns.scatterplot(data=df, x='sepal_lenght', y='sepal_widht', hue='species')
+# Gráficos interativos
+st.subheader("Gráfico de Dispersão: Sepal Length vs Sepal Width")
+st.write("Visualização das características das espécies de iris.")
+scatter_plot = sns.scatterplot(data=df, x="sepal_length", y="sepal_width", hue="species")
 st.pyplot(scatter_plot.figure)
 
-st.subheader('distribuição de comprimento das pétalas')
-st.write('distribuição do comprimento das pétalas para as tres especies')
-hist_plot = sns.histplot(data=df,x='petal_lenght',hue='species',multiple='stack')
+# Gráfico de histograma
+st.subheader("Distribuição do Comprimento da Pétala")
+st.write("Distribuição do comprimento da pétala para as três espécies.")
+hist_plot = sns.histplot(data=df, x='petal_length', hue='species', multiple='stack')
 st.pyplot(hist_plot.figure)
